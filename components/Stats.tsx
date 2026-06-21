@@ -20,11 +20,11 @@ export default function Stats() {
   return (
     <section className="blk">
       <div className="wrap">
-        <div className="stats">
+        {/* <div className="stats">
           <div className="stat reveal"><div className="n" data-count="100" data-suffix="+">0</div><div className="l">Campuses</div></div>
           <div className="stat reveal"><div className="n" data-count="50" data-suffix="K+">0</div><div className="l">Conversations</div></div>
           <div className="stat reveal"><div className="n" data-count="10" data-suffix="K+">0</div><div className="l">Students</div></div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

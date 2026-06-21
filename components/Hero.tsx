@@ -4,21 +4,39 @@ import { useEffect } from "react";
 
 export default function Hero() {
   useEffect(() => {
-    const t = setTimeout(() => {
-      const bar = document.getElementById("barFill");
-      if (bar) bar.style.width = "72%";
-    }, 200);
-    const t2 = setTimeout(() => {
-      let v = 0;
-      const c = document.getElementById("count");
-      const iv = setInterval(() => {
-        v += 11;
-        if (v >= 500) { v = 500; clearInterval(iv); }
-        if (c) c.textContent = v + "+";
-      }, 20);
-    }, 900);
-    return () => { clearTimeout(t); clearTimeout(t2); };
-  }, []);
+  const launchDate = new Date("2026-06-22T00:00:00");
+  const now = new Date();
+
+  const daysPassed = Math.floor(
+    (now.getTime() - launchDate.getTime()) /
+    (1000 * 60 * 60 * 24)
+  );
+
+  let target = 0;
+
+  if (daysPassed <= 0) target = 0;
+  else if (daysPassed === 1) target = 25;
+  else if (daysPassed === 2) target = 50;
+  else if (daysPassed === 3) target = 100;
+  else target = 100 + (daysPassed - 3) * 20;
+
+  const counter = document.getElementById("count");
+
+  let current = 0;
+
+  const iv = setInterval(() => {
+    current += Math.ceil(target / 30);
+
+    if (current >= target) {
+      current = target;
+      clearInterval(iv);
+    }
+
+    if (counter) counter.textContent = `${current}+`;
+  }, 30);
+
+  return () => clearInterval(iv);
+}, []);
 
   return (
     <section className="hero">

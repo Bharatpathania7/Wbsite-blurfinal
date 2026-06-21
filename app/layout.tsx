@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "blur — Exclusive Access",
   description:
     "Your campus's anonymous social network. Student-only. Invite-only. Say it. Stay unseen.",
+  icons: {
+    icon: "/blur-logo.png",
+  },
 };
 
 export const viewport: Viewport = {

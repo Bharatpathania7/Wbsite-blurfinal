@@ -4,7 +4,7 @@ export default function Nav() {
     <div className="island">
       <img src="/logo.png" alt="blur" />
       <span className="pill">
-        <span className="d" /> Live on campus
+        <span className="d" /> Coming Soon To Your Campus
       </span>
       <a href="#join">Join</a>
     </div>
